@@ -44,6 +44,7 @@ public class StudentController {
     public Result studentList(Long pageNo, Long pageSize, String studentName){
         QueryWrapper queryWrapper = new QueryWrapper();
         if (StringUtils.isNotBlank(studentName)){
+            System.out.println("111111111111111111");
             queryWrapper.like("name",studentName);
         }
         IPage<Student> iPage = iStudentService.page(new Page<>(pageNo,pageSize),queryWrapper);
